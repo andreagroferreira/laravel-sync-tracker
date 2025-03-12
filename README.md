@@ -4,12 +4,13 @@
   <img src="https://raw.githubusercontent.com/andreagroferreira/laravel-sync-tracker/main/art/banner.png" alt="Laravel Sync Tracker Banner" width="100%">
 </p>
 
-<p align="center">
-  <a href="[https://github.com/andreagroferreira/laravel-sync-tracker/actions](https://github.com/andreagroferreira/laravel-sync-tracker/edit/v1.0.0/README.md)"><img src="https://github.com/andreagroferreira/laravel-sync-tracker/workflows/run-tests/badge.svg" alt="Build Status"></a>
-  <a href="https://packagist.org/packages/andreagroferreira/laravel-sync-tracker"><img src="https://img.shields.io/packagist/v/andreagroferreira/laravel-sync-tracker.svg?style=flat-square" alt="Latest Stable Version"></a>
-  <a href="https://packagist.org/packages/andreagroferreira/laravel-sync-tracker"><img src="https://img.shields.io/packagist/dt/andreagroferreira/laravel-sync-tracker.svg?style=flat-square" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/andreagroferreira/laravel-sync-tracker"><img src="https://img.shields.io/packagist/l/andreagroferreira/laravel-sync-tracker.svg?style=flat-square" alt="License"></a>
-</p>
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/andreagroferreira/redis-stream.svg?style=flat-square)](https://packagist.org/packages/andreagroferreira/laravel-sync-tracker)
+[![Total Downloads](https://img.shields.io/packagist/dt/andreagroferreira/redis-stream.svg?style=flat-square)](https://packagist.org/packages/andreagroferreira/laravel-sync-tracker)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![PHP Version Support](https://img.shields.io/packagist/php-v/andreagroferreira/redis-stream.svg?style=flat-square)](https://packagist.org/packages/andreagroferreira/laravel-sync-tracker)
+[![Laravel Version Support](https://img.shields.io/badge/Laravel-9.x%20|%2010.x%20|%2012.x-brightgreen.svg?style=flat-square)](https://packagist.org/packages/andreagroferreira/laravel-sync-tracker)
+[![GitHub forks](https://img.shields.io/github/forks/andreagroferreira/laravel-redis-stream.svg?style=social&label=Fork&maxAge=2592000)](https://github.com/andreagroferreira/laravel-sync-tracker)
+[![GitHub stars](https://img.shields.io/github/stars/andreagroferreira/laravel-redis-stream.svg?style=social&label=Star&maxAge=2592000)](https://github.com/andreagroferreira/laravel-sync-tracker)
 
 A powerful Laravel package for tracking entity synchronization status between systems. Easily manage data synchronization between your Laravel application and external services like CRMs, ERPs, or any third-party API.
 
