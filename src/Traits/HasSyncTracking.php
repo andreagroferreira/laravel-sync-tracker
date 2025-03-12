@@ -51,6 +51,16 @@ trait HasSyncTracking
     {
         return $this->morphOne(SyncTrackedEntity::class, 'trackable');
     }
+    
+    /**
+     * Get all sync tracking entries for this model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function syncTrackers()
+    {
+        return $this->morphMany(SyncTrackedEntity::class, 'trackable');
+    }
 
     /**
      * Mark this model as synced.
@@ -91,6 +101,19 @@ trait HasSyncTracking
     public function getExternalId(): ?string
     {
         return $this->syncTracking ? $this->syncTracking->external_id : null;
+    }
+
+    /**
+     * Get the external ID for this model from a specific source.
+     *
+     * @param string $source
+     * @return string|null
+     */
+    public function getExternalIdFromSource(string $source): ?string
+    {
+        return $this->syncTracking()
+            ->where('source', $source)
+            ->value('external_id');
     }
 
     /**

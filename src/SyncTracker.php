@@ -42,12 +42,17 @@ class SyncTracker
         ?string $source = null,
         array $metadata = []
     ): SyncTrackedEntity {
-        return $this->track($model, [
+        $syncInfo = $this->track($model, [
             'external_id' => $externalId,
             'source' => $source,
             'metadata' => $metadata,
             'synced_at' => now(),
         ]);
+        
+        // Dispatch an event when a model is synced
+        event(new \WizardingCode\FlowNetwork\SyncTracker\Events\EntitySynced($model, $syncInfo));
+        
+        return $syncInfo;
     }
 
     /**
