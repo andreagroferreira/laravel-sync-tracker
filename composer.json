@@ -1,0 +1,58 @@
+{
+    "name": "andreagroferreira/laravel-sync-tracker",
+    "description": "A Laravel package for tracking entity synchronization status between systems",
+    "keywords": ["laravel", "sync", "tracker", "database", "orm", "eloquent"],
+    "type": "library",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andre Agro Ferreira",
+            "email": "andre.ferreira@wizardingcode.io"
+        }
+    ],
+    "require": {
+        "php": "^8.1|^8.2|^8.3|^8.4",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/database": "^8.0|^9.0|^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
+        "pestphp/pest": "^1.22|^2.0",
+        "pestphp/pest-plugin-laravel": "^1.2|^2.0",
+        "laravel/pint": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WizardingCode\\FlowNetwork\\SyncTracker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WizardingCode\\FlowNetwork\\SyncTracker\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WizardingCode\\FlowNetwork\\SyncTracker\\SyncTrackerServiceProvider"
+            ],
+            "aliases": {
+                "SyncTracker": "WizardingCode\\FlowNetwork\\SyncTracker\\Facades\\SyncTracker"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
