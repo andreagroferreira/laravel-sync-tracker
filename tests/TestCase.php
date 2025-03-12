@@ -2,11 +2,10 @@
 
 namespace WizardingCode\FlowNetwork\SyncTracker\Tests;
 
-use WizardingCode\FlowNetwork\SyncTracker\SyncTrackerServiceProvider;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
+use WizardingCode\FlowNetwork\SyncTracker\SyncTrackerServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -23,7 +22,7 @@ class TestCase extends Orchestra
 
         // Run the migrations
         $this->loadLaravelMigrations();
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     /**
@@ -50,9 +49,9 @@ class TestCase extends Orchestra
         // Setup default database to use sqlite :memory:
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
     }
 }

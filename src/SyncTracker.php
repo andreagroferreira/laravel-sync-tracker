@@ -9,10 +9,6 @@ class SyncTracker
 {
     /**
      * Track the sync status for a model.
-     *
-     * @param Model $model
-     * @param array $attributes
-     * @return SyncTrackedEntity
      */
     public function track(Model $model, array $attributes = []): SyncTrackedEntity
     {
@@ -29,12 +25,6 @@ class SyncTracker
 
     /**
      * Mark a model as synced.
-     *
-     * @param Model $model
-     * @param string|null $externalId
-     * @param string|null $source
-     * @param array $metadata
-     * @return SyncTrackedEntity
      */
     public function markAsSynced(
         Model $model,
@@ -48,18 +38,15 @@ class SyncTracker
             'metadata' => $metadata,
             'synced_at' => now(),
         ]);
-        
+
         // Dispatch an event when a model is synced
         event(new \WizardingCode\FlowNetwork\SyncTracker\Events\EntitySynced($model, $syncInfo));
-        
+
         return $syncInfo;
     }
 
     /**
      * Get the sync tracking information for a model.
-     *
-     * @param Model $model
-     * @return SyncTrackedEntity|null
      */
     public function getSyncInfo(Model $model): ?SyncTrackedEntity
     {
@@ -71,24 +58,16 @@ class SyncTracker
 
     /**
      * Check if a model has been synced.
-     *
-     * @param Model $model
-     * @return bool
      */
     public function isSynced(Model $model): bool
     {
         $tracking = $this->getSyncInfo($model);
-        
+
         return $tracking && $tracking->synced_at !== null;
     }
 
     /**
      * Find a model by its external ID and source.
-     *
-     * @param string $externalId
-     * @param string $source
-     * @param string $modelClass
-     * @return Model|null
      */
     public function findByExternalId(string $externalId, string $source, string $modelClass): ?Model
     {
@@ -98,7 +77,7 @@ class SyncTracker
             'trackable_type' => $modelClass,
         ])->first();
 
-        if (!$tracking) {
+        if (! $tracking) {
             return null;
         }
 
