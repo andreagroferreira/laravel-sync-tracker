@@ -39,8 +39,6 @@ class SyncTrackedEntity extends Model
 
     /**
      * Create a new model instance.
-     *
-     * @param array $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -51,8 +49,6 @@ class SyncTrackedEntity extends Model
 
     /**
      * Get the trackable model.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function trackable(): MorphTo
     {

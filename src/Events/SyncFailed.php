@@ -2,14 +2,15 @@
 
 namespace WizardingCode\FlowNetwork\SyncTracker\Events;
 
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Exception;
 
 class SyncFailed
 {
-    use Dispatchable, SerializesModels;
+    use Dispatchable;
+    use SerializesModels;
 
     /**
      * The model that failed to sync.
@@ -42,10 +43,6 @@ class SyncFailed
     /**
      * Create a new event instance.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @param  string  $source
-     * @param  \Exception|null  $exception
-     * @param  array  $metadata
      * @return void
      */
     public function __construct(Model $model, string $source, ?Exception $exception = null, array $metadata = [])

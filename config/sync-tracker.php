@@ -17,10 +17,10 @@ return [
     'default_tracking' => [
         // Whether to track creation timestamps by default
         'track_created' => true,
-        
+
         // Whether to track update timestamps by default
         'track_updated' => true,
-        
+
         // Whether to track deletion timestamps by default
         'track_deleted' => true,
     ],

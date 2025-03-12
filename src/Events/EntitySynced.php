@@ -9,7 +9,8 @@ use WizardingCode\FlowNetwork\SyncTracker\Models\SyncTrackedEntity;
 
 class EntitySynced
 {
-    use Dispatchable, SerializesModels;
+    use Dispatchable;
+    use SerializesModels;
 
     /**
      * The model that was synced.
@@ -28,8 +29,6 @@ class EntitySynced
     /**
      * Create a new event instance.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @param  \WizardingCode\FlowNetwork\SyncTracker\Models\SyncTrackedEntity  $syncInfo
      * @return void
      */
     public function __construct(Model $model, SyncTrackedEntity $syncInfo)

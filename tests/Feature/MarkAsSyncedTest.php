@@ -8,9 +8,9 @@ uses(WizardingCode\FlowNetwork\SyncTracker\Tests\TestCase::class);
 
 it('can mark a model as synced using facade', function () {
     $model = TestModel::create(['name' => 'Test Model']);
-    
+
     SyncTracker::markAsSynced($model, 'ext-123', 'api');
-    
+
     expect(SyncTracker::isSynced($model))->toBeTrue();
     expect(SyncTracker::getSyncInfo($model)->external_id)->toBe('ext-123');
     expect(SyncTracker::getSyncInfo($model)->source)->toBe('api');
@@ -18,9 +18,9 @@ it('can mark a model as synced using facade', function () {
 
 it('can mark a model as synced using trait', function () {
     $model = TestModel::create(['name' => 'Test With Trait']);
-    
+
     $model->markAsSynced('ext-xyz', 'erp', ['foo' => 'bar']);
-    
+
     expect($model->isSynced())->toBeTrue();
     expect($model->getExternalId())->toBe('ext-xyz');
     expect($model->getSyncSource())->toBe('erp');

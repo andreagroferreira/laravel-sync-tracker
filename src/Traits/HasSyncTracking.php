@@ -2,8 +2,8 @@
 
 namespace WizardingCode\FlowNetwork\SyncTracker\Traits;
 
-use WizardingCode\FlowNetwork\SyncTracker\Models\SyncTrackedEntity;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use WizardingCode\FlowNetwork\SyncTracker\Models\SyncTrackedEntity;
 
 trait HasSyncTracking
 {
@@ -44,14 +44,12 @@ trait HasSyncTracking
 
     /**
      * Get the sync tracking information for this model.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
      */
     public function syncTracking(): MorphOne
     {
         return $this->morphOne(SyncTrackedEntity::class, 'trackable');
     }
-    
+
     /**
      * Get all sync tracking entries for this model.
      *
@@ -64,11 +62,6 @@ trait HasSyncTracking
 
     /**
      * Mark this model as synced.
-     *
-     * @param string|null $externalId
-     * @param string|null $source
-     * @param array $metadata
-     * @return SyncTrackedEntity
      */
     public function markAsSynced(?string $externalId = null, ?string $source = null, array $metadata = []): SyncTrackedEntity
     {
@@ -85,8 +78,6 @@ trait HasSyncTracking
 
     /**
      * Check if this model has been synced.
-     *
-     * @return bool
      */
     public function isSynced(): bool
     {
@@ -95,8 +86,6 @@ trait HasSyncTracking
 
     /**
      * Get the external ID for this model.
-     *
-     * @return string|null
      */
     public function getExternalId(): ?string
     {
@@ -105,9 +94,6 @@ trait HasSyncTracking
 
     /**
      * Get the external ID for this model from a specific source.
-     *
-     * @param string $source
-     * @return string|null
      */
     public function getExternalIdFromSource(string $source): ?string
     {
@@ -118,8 +104,6 @@ trait HasSyncTracking
 
     /**
      * Get the sync source for this model.
-     *
-     * @return string|null
      */
     public function getSyncSource(): ?string
     {
@@ -128,8 +112,6 @@ trait HasSyncTracking
 
     /**
      * Get the sync metadata for this model.
-     *
-     * @return array|null
      */
     public function getSyncMetadata(): ?array
     {

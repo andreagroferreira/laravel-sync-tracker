@@ -16,10 +16,10 @@ it('loads configuration correctly', function () {
 it('allows overriding table name', function () {
     // Change config for this test
     config(['sync-tracker.table_name' => 'custom_sync_table']);
-    
+
     expect(config('sync-tracker.table_name'))->toBe('custom_sync_table');
-    
+
     // Instantiate model to verify it uses the config
-    $model = new SyncTrackedEntity();
+    $model = new SyncTrackedEntity;
     expect($model->getTable())->toBe('custom_sync_table');
 });

@@ -13,7 +13,6 @@
 
 namespace WizardingCode\FlowNetwork\SyncTracker\Tests;
 
-use WizardingCode\FlowNetwork\SyncTracker\Tests\TestCase;
 use WizardingCode\FlowNetwork\SyncTracker\Tests\Models\TestModel;
 
 uses(TestCase::class)->in('Feature', 'Unit');

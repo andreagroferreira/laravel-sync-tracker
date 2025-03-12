@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \WizardingCode\FlowNetwork\SyncTracker\Models\SyncTrackedEntity|null getSyncInfo(\Illuminate\Database\Eloquent\Model $model)
  * @method static bool isSynced(\Illuminate\Database\Eloquent\Model $model)
  * @method static \Illuminate\Database\Eloquent\Model|null findByExternalId(string $externalId, string $source, string $modelClass)
- * 
+ *
  * @see \WizardingCode\FlowNetwork\SyncTracker\SyncTracker
  */
 class SyncTracker extends Facade

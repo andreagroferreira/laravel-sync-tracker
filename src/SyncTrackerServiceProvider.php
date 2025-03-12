@@ -15,16 +15,16 @@ class SyncTrackerServiceProvider extends ServiceProvider
     {
         // Publish configuration
         $this->publishes([
-            __DIR__ . '/../config/sync-tracker.php' => config_path('sync-tracker.php'),
+            __DIR__.'/../config/sync-tracker.php' => config_path('sync-tracker.php'),
         ], 'config');
 
         // Publish migrations
         $this->publishes([
-            __DIR__ . '/../database/migrations/' => database_path('migrations'),
+            __DIR__.'/../database/migrations/' => database_path('migrations'),
         ], 'migrations');
 
         // Load migrations
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     /**
@@ -36,12 +36,12 @@ class SyncTrackerServiceProvider extends ServiceProvider
     {
         // Merge configuration
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/sync-tracker.php', 'sync-tracker'
+            __DIR__.'/../config/sync-tracker.php', 'sync-tracker'
         );
 
         // Register the main class to use with the facade
         $this->app->singleton('sync-tracker', function () {
-            return new SyncTracker();
+            return new SyncTracker;
         });
     }
 }
