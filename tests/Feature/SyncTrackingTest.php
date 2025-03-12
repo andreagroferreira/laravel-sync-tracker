@@ -1,11 +1,11 @@
 <?php
 
-namespace FlowNetwork\SyncTracker\Tests\Feature;
+namespace WizardingCode\FlowNetwork\SyncTracker\Tests\Feature;
 
-use FlowNetwork\SyncTracker\Facades\SyncTracker;
-use FlowNetwork\SyncTracker\Tests\TestCase;
-use FlowNetwork\SyncTracker\Tests\Models\TestModel;
-use FlowNetwork\SyncTracker\Traits\HasSyncTracking;
+use WizardingCode\FlowNetwork\SyncTracker\Facades\SyncTracker;
+use WizardingCode\FlowNetwork\SyncTracker\Tests\TestCase;
+use WizardingCode\FlowNetwork\SyncTracker\Tests\Models\TestModel;
+use WizardingCode\FlowNetwork\SyncTracker\Traits\HasSyncTracking;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,17 +15,6 @@ class SyncTrackingTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-
-        // Create a test table
-        Schema::create('test_models', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
-        });
-
-        // Run the migrations
-        $this->loadLaravelMigrations();
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
     }
 
     /** @test */
@@ -64,11 +53,4 @@ class SyncTrackingTest extends TestCase
         $this->assertEquals('erp', $model->getSyncSource());
         $this->assertEquals(['foo' => 'bar'], $model->getSyncMetadata());
     }
-}
-
-class TestModel extends Model
-{
-    use HasSyncTracking;
-    
-    protected $fillable = ['name'];
 }

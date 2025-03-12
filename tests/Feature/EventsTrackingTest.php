@@ -2,9 +2,12 @@
 
 use WizardingCode\FlowNetwork\SyncTracker\Tests\Models\TestModel;
 
+// Make sure to use the TestCase to have Laravel set up
+uses(WizardingCode\FlowNetwork\SyncTracker\Tests\TestCase::class);
+
 it('automatically tracks model creation', function () {
     // Create model without manually tracking it
-    $model = createTestModel();
+    $model = TestModel::create(['name' => 'Test Model']);
     
     // The trait should have auto-tracked creation
     $tracking = $model->syncTracking;
@@ -14,7 +17,7 @@ it('automatically tracks model creation', function () {
 });
 
 it('automatically tracks model updates', function () {
-    $model = createTestModel();
+    $model = TestModel::create(['name' => 'Test Model']);
     
     // Wait a moment to ensure timestamps are different
     usleep(1000);
