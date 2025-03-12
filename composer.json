@@ -1,68 +1,70 @@
 {
-    "name": "andreagroferreira/laravel-sync-tracker",
-    "description": "A Laravel package for tracking entity synchronization status between systems",
-    "keywords": ["laravel", "sync", "tracker", "database", "orm", "eloquent"],
-    "type": "library",
-    "version": "1.0.0",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Andre Agro Ferreira",
-            "email": "andre.ferreira@wizardingcode.io"
-        }
-    ],
-    "require": {
-        "php": "^8.1|^8.2|^8.3|^8.4",
-        "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
-        "illuminate/database": "^9.0|^10.0|^11.0|^12.0"
-    },
-    "require-dev": {
-        "pestphp/pest": "^1.22|^2.0",
-        "pestphp/pest-plugin-laravel": "^1.4|^2.0",
-        "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0",
-        "mockery/mockery": "^1.5",
-        "laravel/pint": "^1.0",
-        "nunomaduro/larastan": "^2.0|^3.0",
-        "phpunit/phpunit": "^9.5|^10.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "WizardingCode\\FlowNetwork\\SyncTracker\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "WizardingCode\\FlowNetwork\\SyncTracker\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": "[ -f vendor/bin/pest ] && vendor/bin/pest || vendor/bin/phpunit",
-        "test-coverage": "[ -f vendor/bin/pest ] && vendor/bin/pest --coverage || vendor/bin/phpunit --coverage-text",
-        "format": "vendor/bin/pint",
-        "analyse": "vendor/bin/phpstan analyse || echo 'PHPStan not available'",
-        "check-style": "vendor/bin/pint --test",
-        "check": [
-            "@check-style",
-            "@test"
-        ]
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "WizardingCode\\FlowNetwork\\SyncTracker\\SyncTrackerServiceProvider"
-            ],
-            "aliases": {
-                "SyncTracker": "WizardingCode\\FlowNetwork\\SyncTracker\\Facades\\SyncTracker"
-            }
-        }
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "pestphp/pest-plugin-laravel": true
-        }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+  "name": "andreagroferreira/laravel-sync-tracker",
+  "description": "A Laravel package for tracking entity synchronization status between systems",
+  "type": "library",
+  "version": "1.0.0",
+  "keywords": ["laravel", "sync", "tracker", "database", "orm", "eloquent"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "André Ferreira",
+      "email": "andre.ferreira@wizardingcode.io",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WizardingCode\\FlowNetwork\\SyncTracker\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WizardingCode\\FlowNetwork\\SyncTracker\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.1|^8.2|^8.3|^8.4",
+    "illuminate/support": "^8.83|^9.0|^10.0|^11.0|^12.0",
+    "illuminate/database": "^8.83|^9.0|^10.0|^11.0|^12.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.22|^2.0",
+    "pestphp/pest-plugin-laravel": "^1.1|^2.0",
+    "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0|^10.0",
+    "mockery/mockery": "^1.5",
+    "laravel/pint": "^1.0",
+    "nunomaduro/larastan": "^1.0|^2.0|^3.0",
+    "phpunit/phpunit": "^9.5|^10.0"
+  },
+  "scripts": {
+    "test": "[ -f vendor/bin/pest ] && vendor/bin/pest || vendor/bin/phpunit",
+    "test-coverage": "[ -f vendor/bin/pest ] && vendor/bin/pest --coverage || vendor/bin/phpunit --coverage-text",
+    "format": "vendor/bin/pint",
+    "analyse": "vendor/bin/phpstan analyse || echo 'PHPStan not available'",
+    "check-style": "vendor/bin/pint --test",
+    "check": [
+      "@check-style",
+      "@analyse",
+      "@test"
+    ]
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "pestphp/pest-plugin-laravel": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "extra": {
+    "laravel": {
+      "providers": [
+        "WizardingCode\\FlowNetwork\\SyncTracker\\SyncTrackerServiceProvider"
+      ],
+      "aliases": {
+        "SyncTracker": "WizardingCode\\FlowNetwork\\SyncTracker\\Facades\\SyncTracker"
+      }
+    }
+  }
 }
