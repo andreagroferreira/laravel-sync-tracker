@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/andreagroferreira/laravel-sync-tracker/actions"><img src="https://github.com/andreagroferreira/laravel-sync-tracker/workflows/run-tests/badge.svg" alt="Build Status"></a>
+  <a href="[https://github.com/andreagroferreira/laravel-sync-tracker/actions](https://github.com/andreagroferreira/laravel-sync-tracker/edit/v1.0.0/README.md)"><img src="https://github.com/andreagroferreira/laravel-sync-tracker/workflows/run-tests/badge.svg" alt="Build Status"></a>
   <a href="https://packagist.org/packages/andreagroferreira/laravel-sync-tracker"><img src="https://img.shields.io/packagist/v/andreagroferreira/laravel-sync-tracker.svg?style=flat-square" alt="Latest Stable Version"></a>
   <a href="https://packagist.org/packages/andreagroferreira/laravel-sync-tracker"><img src="https://img.shields.io/packagist/dt/andreagroferreira/laravel-sync-tracker.svg?style=flat-square" alt="Total Downloads"></a>
   <a href="https://packagist.org/packages/andreagroferreira/laravel-sync-tracker"><img src="https://img.shields.io/packagist/l/andreagroferreira/laravel-sync-tracker.svg?style=flat-square" alt="License"></a>
